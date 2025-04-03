@@ -59,22 +59,19 @@ print(cant_de_l)
 #
 
 def propagar(fosf):     
-    def prop_i(i):
-        step = 1
-        # intenta propagar hacia la der.
-        while i+step <= len(fosf)-1 and fosf[i+step]==0:
-            fosf[i+step] = 1
-            step += 1
-        
-        # intenta propagar hacia la izq.
-        step = 1
-        while i-step >= 0 and fosf[i-step]==0:
-            fosf[i-step] = 1
-            step += 1
-
     for i in range(len(fosf)):
         if fosf[i]==1:
-            prop_i(i)
+            step = 1
+            # intenta propagar hacia la der.
+            while i+step <= len(fosf)-1 and fosf[i+step]==0:
+                fosf[i+step] = 1
+                step += 1
+            
+            # intenta propagar hacia la izq.
+            step = 1
+            while i-step >= 0 and fosf[i-step]==0:
+                fosf[i-step] = 1
+                step += 1
 
     return fosf
 
