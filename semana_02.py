@@ -63,7 +63,6 @@ def propagar(fosf):
         step = 1
         # intenta propagar hacia la der.
         while i+step <= len(fosf)-1 and fosf[i+step]==0:
-            print(f"propaga hacia {i+step}")
             fosf[i+step] = 1
             step += 1
         
