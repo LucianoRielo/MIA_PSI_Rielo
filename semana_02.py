@@ -59,26 +59,35 @@ print(cant_de_l)
 #
 
 def propagar(fosf):     
+    def prop_i(i):
+        step = 1
+        # intenta propagar hacia la der.
+        while i+step <= len(fosf)-1 and fosf[i+step]==0:
+            print(f"propaga hacia {i+step}")
+            fosf[i+step] = 1
+            step += 1
+        
+        # intenta propagar hacia la izq.
+        step = 1
+        while i-step >= 0 and fosf[i-step]==0:
+            fosf[i-step] = 1
+            step += 1
 
-    fosf_prop = fosf.copy()
-    for i, f in enumerate(fosf):
-        if f == 1:
-            # reviso el de la izquierda si esta nuevo si no estoy en el extremo izquierdo (i=0)
-            if i != 0:
-                if fosf[i-1] == 0:
-                    fosf[i-1] = 1
-            # reviso la derecha si no estoy en el extremo derecho
-            if i != len(fosf) - 1:
-                if fosf[i+1] == 0:
-                    fosf[i+1] = 1
-        else:
-            continue
+    for i in range(len(fosf)):
+        if fosf[i]==1:
+            prop_i(i)
+
     return fosf
 
 
 fosforos = [ 0, 0, 0,-1, 1, 0, 0, 0,-1, 0, 1, 0, 0]
-
 print(propagar(fosforos))
 
+fosforos1 = [ 0, 0, 1, 0, 0, 0, 0]
+print(propagar(fosforos1))
 
+fosforos2 = [-1, 0, 0, 1, 0, 0]
+print(propagar(fosforos2))
 
+fosforos3 = [0, 0, 0, 1, -1 , -1]
+print(propagar(fosforos3))
