@@ -1,0 +1,17 @@
+Corrección de la entrega:
+
+[5, 4, 3, 2, 1]
+['San Miguel', 'San Fernando', 'Rosario', 'Bogotá']
+Se requieren 25 pasos de collatz si lo aplicamos al número 100
+{'holi': 3, 'chauchis': 2, 'lola': 3, 'lincoln': 3, 'Humahuaca': 1}
+1
+[0, 0, 0, -1, 1, 1, 1, 1, -1, 1, 1, 1, 1]
+[1, 1, 1, 1, 1, 1, 1]
+[-1, 1, 1, 1, 1, 1]
+[1, 1, 1, 1, -1, -1]
+..............
+----------------------------------------------------------------------
+Ran 14 tests in 0.001s
+
+OK
+
