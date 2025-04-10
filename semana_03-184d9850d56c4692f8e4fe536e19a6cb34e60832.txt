@@ -1,0 +1,22 @@
+Corrección de la entrega:
+
+...E..
+======================================================================
+ERROR: test_crear_album (tests.test_semana_03.TestAlbumFiguritas)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/mlopez/.local/lib/python3.10/site-packages/timeout_decorator/timeout_decorator.py", line 82, in new_function
+    return function(*args, **kwargs)
+  File "/home/mlopez/git/homework-checker/01_getting_data/tests/test_semana_03.py", line 12, in test_crear_album
+    self.assertEqual(semana_03.crear_album(6), [0, 0, 0, 0, 0, 0])
+  File "/usr/lib/python3.10/unittest/case.py", line 845, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "/usr/lib/python3.10/unittest/case.py", line 835, in _baseAssertEqual
+    if not first == second:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.027s
+
+FAILED (errors=1)
+
