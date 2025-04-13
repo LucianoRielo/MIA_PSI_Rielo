@@ -4,7 +4,7 @@ import numpy as np
 
 # funciones
 def crear_album(n):
-    return np.zeros(n)
+    return [0]*n
 def album_incompleto(A):
     if 0 in A:
         return True
@@ -70,3 +70,6 @@ if __name__=="__main__":
         data.append(cuantos_paquetes(tamaño_album, 5))
     media = np.sum(data)/n_repeticiones
     print(f"Compra promedio de paquetes para un album de {tamaño_album} = {media}")
+
+    print_ejercicio("TEST")
+    print(crear_album(6))
