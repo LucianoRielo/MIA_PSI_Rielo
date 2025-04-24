@@ -243,5 +243,5 @@ print(f"Razon entre especies exóticas y autóctonas = {razon_exot_autoc:.2f}")
 El resultado fue:
 
 ```python
-Razon entre especies exóticas y autóctonas = 3.62
+Razón entre especies exóticas y autóctonas = 3.62
 ```
