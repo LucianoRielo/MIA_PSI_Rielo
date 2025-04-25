@@ -7,7 +7,7 @@ def arboles_parque(nombre_archivo, nombre_parque):
     para cada árbol (identificado por su id) de ese parque (cada fila del csv) 
     y los nombres de las columnas correspondientes como claves de un diccionario interno.
     """
-    file = open(nombre_archivo)
+    file = open(nombre_archivo, encoding='utf-8')
     rows = csv.reader(file)
     headers = next(rows)
     idx_espacio_ve = headers.index('espacio_ve')
@@ -74,7 +74,7 @@ def obtener_parques(nombre_archivo):
     '''
     Devuelve una lista con todos los parques existentes.
     '''
-    file = open(nombre_archivo)
+    file = open(nombre_archivo, encoding='utf-8')
     rows = csv.reader(file)
     headers = next(rows)
     idx_espacio_ve = headers.index('espacio_ve')
@@ -89,7 +89,7 @@ def cant_arboles_por_parque(nombre_archivo):
     '''
     Devuelve la cantidad de arboles que hay en cada parque
     '''
-    file = open(nombre_archivo)
+    file = open(nombre_archivo, encoding='utf-8')
     rows = csv.reader(file)
     headers = next(rows)
     idx_espacio_ve = headers.index('espacio_ve')
@@ -107,7 +107,7 @@ def altura_promedio_cada_parque(nombre_archivo):
     '''
     Devuelve la altura promedio de arboles de cada parque
     '''
-    file = open(nombre_archivo)
+    file = open(nombre_archivo, encoding='utf-8')
     rows = csv.reader(file)
     headers = next(rows)
     idx_espacio_ve = headers.index('espacio_ve')
@@ -130,7 +130,7 @@ def variedades_cada_parque(nombre_archivo):
     '''
     Devuelve la cantidad de especies que tiene cada parque.
     '''
-    file = open(nombre_archivo)
+    file = open(nombre_archivo, encoding='utf-8')
     rows = csv.reader(file)
     headers = next(rows)
     idx_espacio_ve = headers.index('espacio_ve')
@@ -168,7 +168,7 @@ def cant_especies_ciudad(nombre_archivo):
     '''
     Devuelve la cantidad de cada especie de la ciudad indicada
     '''
-    file = open(nombre_archivo)
+    file = open(nombre_archivo, encoding='utf-8')
     rows = csv.reader(file)
     headers = next(rows)
     idx_variedad = headers.index('nombre_cie')
@@ -181,12 +181,26 @@ def cant_especies_ciudad(nombre_archivo):
             data[especie] = 1
     return data
 
+def distintos_origenes(nombre_archivo):
+    '''
+    Permite ver cuales son los distintos origenes para analizar el dataset
+    '''
+    file = open(nombre_archivo, encoding='utf-8')
+    rows = csv.reader(file)
+    headers = next(rows)
+    idx_origen = headers.index('origen')
+    data = []
+    for row in rows:
+        if (origen:=row[idx_origen]) not in data:
+            data.append(origen)
+    return data
+
 def cant_especies_por_origen(nombre_archivo):
     '''
     Devuelve la cantidad de especies que hay de cada origen.
     Tener en cuenta que se contabilizan las especies, no los arboles.
     '''
-    file = open(nombre_archivo)
+    file = open(nombre_archivo, encoding='utf-8')
     rows = csv.reader(file)
     headers = next(rows)
     idx_origen = headers.index('origen')
@@ -269,6 +283,10 @@ if __name__=="__main__":
     print_ejercicio("5 e")
     # e
         # La razón entre especies exóticas y autóctonas.
+    # primero reviso cuales son los origenes existentes en el dataset
+    print(distintos_origenes(nombre_archivo))
     cant_origen = cant_especies_por_origen(nombre_archivo)
     razon_exot_autoc = cant_origen["Exótico"]/cant_origen["Nativo/Autóctono"]
     print(f"Razon entre especies exóticas y autóctonas = {razon_exot_autoc:.2f}")
+
+    
