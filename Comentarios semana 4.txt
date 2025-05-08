@@ -1,0 +1,1 @@
+¡Hola! Tu solución cumplió nuestros tests, el informe contempla lo solicitado y los valores son correctos. ¡Saludos!
