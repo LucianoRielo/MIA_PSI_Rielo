@@ -2,6 +2,7 @@
 #  EJERCICIO 1  #
 #---------------#
 def invertir_lista(lista):
+    '''invierte una lista'''
     new = []
     for i in range(len(lista)):
         new.append(lista[-i-1])
@@ -11,6 +12,13 @@ def invertir_lista(lista):
 #  EJERCICIO 2  #
 #---------------#
 def collatz(nro):
+    '''
+    Calcula los pasos de la conjetura de Collatz.
+    La conjetura dice que cualquier número entero positivo n,
+    eventualmente se convertirá en 1, aplicando la siguiente regla:
+    - Si n es par, se divide entre 2.
+    - Si n es impar, se multiplica por 3 y se suma 1.
+    '''
     if nro == 1:
         return 0
     else:
@@ -24,12 +32,18 @@ def collatz(nro):
 #  EJERCICIO 3  #
 #---------------#
 def contar_definiciones(d):
+    '''
+    Devuelve un diccionario con los pares key/longitud de la lista
+    '''
     new = {}
     for k, v in d.items():
         new[k] = len(v)
     return new
 
 def cantidad_de_claves_letra(d, l):
+    '''
+    Devuelve cuantas key (str) comienzan con la letra [l]
+    '''
     contador = 0
     for k in d:
         if l == k[0]:
@@ -40,6 +54,9 @@ def cantidad_de_claves_letra(d, l):
 #  EJERCICIO 4  #
 #---------------#
 def propagar(fosf):     
+    '''
+    
+    '''
     for i in range(len(fosf)):
         if fosf[i]==1:
             step = 1
